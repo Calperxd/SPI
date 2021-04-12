@@ -1,10 +1,6 @@
 # Serial Synchronous Communication
 
 
-
-# Serial Synchronous Communication
-
-
 #### Requirements
 
 - Medium knowledge in assembly for arm cortex m4
@@ -15,5 +11,6 @@
 
 #### VHDL
 
-![entity_1](https://user-images.githubusercontent.com/48101913/114426676-b0e00780-9b90-11eb-9d9d-692bdd64beaf.jpg)
+![entity_1](https://user-images.githubusercontent.com/48101913/114427014-09afa000-9b91-11eb-853e-b1f8697e0f04.jpg)
+
 
