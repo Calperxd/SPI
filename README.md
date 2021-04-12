@@ -15,5 +15,5 @@
 
 #### VHDL
 
-![entity_1](https://user-images.githubusercontent.com/48101913/114426630-a291eb80-9b90-11eb-8a69-f46506bd0f37.png)
+![entity_1](https://user-images.githubusercontent.com/48101913/114426676-b0e00780-9b90-11eb-9d9d-692bdd64beaf.jpg)
 
