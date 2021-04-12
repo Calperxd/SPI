@@ -1,2 +1,2 @@
 # Serial Synchronous Communication
-![image](https://user-images.githubusercontent.com/48101913/114423454-92c4d800-9b8d-11eb-9379-ef92b9617fbf.png)
+![image](https://user-images.githubusercontent.com/48101913/114424880-e97ee180-9b8e-11eb-9cb1-913630b2a335.png)
