@@ -100,8 +100,5 @@ begin
                 next_state          <=      st_idle;
             
         end case ;
-
     end process;
-
-
 end architecture;
