@@ -1,1 +1,1 @@
-# SPI Serial Synchronous Communication
+# Serial Synchronous Communication
