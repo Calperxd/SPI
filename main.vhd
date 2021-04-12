@@ -5,7 +5,8 @@ use ieee.std_logic_1164.all;
 
 -- Finity State Machine
 entity fsm_entity is 
-    port(
+    port
+    (
     -- INPUT
         clk             : in std_logic;
         rst             : in std_logic;
@@ -19,7 +20,8 @@ end entity;
 
 architecture Behavior of fsm_entity is
     -- state enumaration
-    type state is (
+    type state is 
+    (
         st_idle,    -- State Idle
         st_txBit7,
         st_txBit6,
@@ -37,15 +39,26 @@ begin
     p1: process (spi_sclk,rst)
     -- Update the state
     begin
-
+        if(rst = '1' or (tx_enable = '0')) then
+            present_state <= st_idle;
+        elsif(spi_sclk'event and spi_sclk = '0') then
+            present_state <= next_state;
+        end if;
     end process;
 
+    -- Circuit output and next states
     p2: process(present_state,tx_enable)
-    -- output the next stage
+    -- Output the next stage
     begin
-        if(rst = '1' or (tx_enable = '0')) then
-            
-
+        case( present_state ) is
+        
+            when st_idle =>
+                ss      <=      '1';
+                sclk    <=      '0';
+                mosi    <=      'X';
+            when others =>
+        
+        end case ;
 
     end process;
 
