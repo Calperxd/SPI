@@ -3,9 +3,9 @@
 
 #### Requirements
 
-- Medium knowledge in assembly for arm cortex m4
-- Medium knowledge in C language
-- Basic knowledge in ARM architecture
+- Digital Design (Medium knowledge)
+- Digital Electronic (Advanced knowledge)
+- VHDL - Description Language ( Medium knowledge )
 
 #### SPI Explanation
 
