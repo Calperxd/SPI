@@ -36,6 +36,8 @@ architecture Behavior of fsm_entity is
     signal spi_sclk: std_logic;         -- the signal used for the clock of the SPI protocol
     constant data: std_logic_vector(7 downto 0):= "00001111";
 begin
+    spi_sclk        <=          clk;
+    sclk            <=          spi_sclk;
     p1: process (spi_sclk,rst)
     -- Update the state
     begin
@@ -56,34 +58,46 @@ begin
                 ss                  <=      '1';
                 sclk                <=      '0';
                 mosi                <=      'X';
+
             when st_txBit7 =>
                 ss                  <=      '0';
                 mosi                <=      data(7);
                 next_state          <=      st_txBit6;
+
             when st_txBit6 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(6);
+                next_state          <=      st_txBit5;
+
+            when st_txBit5 =>
+                ss                  <=      '0';
+                mosi                <=      data(5);
+                next_state          <=      st_txBit4;
+
             when st_txBit4 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(4);
+                next_state          <=      st_txBit3;
+
             when st_txBit3 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(3);
+                next_state          <=      st_txBit2;
+
             when st_txBit2 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(2);
+                next_state          <=      st_txBit1;
+
             when st_txBit1 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(1);
+                next_state          <=      st_idle;
+
             when st_txBit0 =>
                 ss                  <=      '0';
-                mosi                <=      data(7);
-                next_state          <=      st_txBit(6);
+                mosi                <=      data(0);
+                next_state          <=      st_idle;
             
         end case ;
 
