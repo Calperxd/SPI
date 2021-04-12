@@ -33,8 +33,8 @@ architecture Behavior of fsm_entity is
         st_txBit0
     );
     signal present_state, next_state: state;
-    constant data: std_logic_vector(7 downto 0):= "00001111";
     signal spi_sclk: std_logic;         -- the signal used for the clock of the SPI protocol
+    constant data: std_logic_vector(7 downto 0):= "00001111";
 begin
     p1: process (spi_sclk,rst)
     -- Update the state
@@ -53,11 +53,38 @@ begin
         case( present_state ) is
         
             when st_idle =>
-                ss      <=      '1';
-                sclk    <=      '0';
-                mosi    <=      'X';
-            when others =>
-        
+                ss                  <=      '1';
+                sclk                <=      '0';
+                mosi                <=      'X';
+            when st_txBit7 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit6;
+            when st_txBit6 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            when st_txBit4 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            when st_txBit3 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            when st_txBit2 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            when st_txBit1 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            when st_txBit0 =>
+                ss                  <=      '0';
+                mosi                <=      data(7);
+                next_state          <=      st_txBit(6);
+            
         end case ;
 
     end process;
